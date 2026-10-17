@@ -3,5 +3,5 @@ RUN rm -rf /usr/share/nginx/html/*
 RUN rm -rf /etc/nginx/default.d/*
 ADD expense.conf /etc/nginx/default.d/expense.conf
 ADD static /usr/share/nginx/html/
-
+CMD ["nginx","-g","daemon-off"]
 
