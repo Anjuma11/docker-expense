@@ -2,6 +2,12 @@ FROM nginx
 
 RUN rm -rf /usr/share/nginx/html/*
 
-COPY static /usr/share/nginx/html/
+
+COPY static/index.html /usr/share/nginx/html/index.html
+COPY static/asset-manifest.json /usr/share/nginx/html/
+COPY static/robots.txt /usr/share/nginx/html/
+COPY static/css/ /usr/share/nginx/html/static/css/
+COPY static/js/ /usr/share/nginx/html/static/js/
+COPY static/media/ /usr/share/nginx/html/static/media/
 
 COPY expense.conf /etc/nginx/default.d/expense.conf
